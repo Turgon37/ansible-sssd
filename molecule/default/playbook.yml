@@ -33,5 +33,5 @@
         ipa_domain: domain.com,
         ldap_tls_cacert: freeipa_client__ca_path
         ipa_hostname: ansible_fqdn,
-        ipa_server: "{{ ['_srv_', '10.0.0.1']join(', ') }}"
+        ipa_server: "{{ ['_srv_', '10.0.0.1']|join(', ') }}"
         ipa_server_mode: 'True'
