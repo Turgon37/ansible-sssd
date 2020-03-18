@@ -11,6 +11,7 @@
         - key: sssd.discovery
           comment: return zabbix discovery item for sssd domains
           command: >
-            /usr/bin/env python -c 'import json, sys; json.dump({"data": list(map(lambda x: {"{"+"#SSSD_DOMAIN}": x}, {{ sssd__domains|list|to_json}} ))}, sys.stdout)'
+            /usr/bin/env python -c
+            'import json, sys; json.dump({"data": list(map(lambda x: {"{"+"#SSSD_DOMAIN}": x}, {{ sssd__domains|list|to_json }} ))}, sys.stdout)'
       state: present
   tags: ['sssd', 'sssd-monitoring']

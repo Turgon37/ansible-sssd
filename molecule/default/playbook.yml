@@ -2,7 +2,36 @@
 - name: Run role
   hosts: all
   any_errors_fatal: true
-  roles:
-    - role: ansible-sssd
+  tasks:
+    - name: "Include turgon37.kerberos_client"
+      include_role:
+        name: ansible-sssd
   vars:
     sssd__service_enabled: false
+    sssd__services:
+      - sudo
+      - nss
+      - pam
+      - ssh
+    sssd__services_settings:
+      nss:
+        homedir_substring: /home
+        memcache_timeout: 600
+        reconnection_retries: 3
+      pam:
+        reconnection_retries: 3
+    sssd__domains:
+      - domain.com
+    sssd__domains_settings:
+      domain.com:
+        cache_credentials: 'True'
+        krb5_store_password_if_offline: 'True'
+        id_provider: ipa
+        auth_provider: ipa
+        access_provider: ipa
+        chpass_provider: ipa
+        ipa_domain: domain.com,
+        ldap_tls_cacert: freeipa_client__ca_path
+        ipa_hostname: ansible_fqdn,
+        ipa_server: "{{ ['_srv_', '10.0.0.1']|join(', ') }}"
+        ipa_server_mode: 'True'
