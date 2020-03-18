@@ -19,7 +19,7 @@ def test_sssd_conf_content(host):
 
     expected = [
         b'config_file_version = 2',
-        b'services = nss, pam, ssh, sudo',
+        b'services = sudo, nss, pam, ssh',
         b'domains = domain.com',
         b'filter_groups = root',
         b'filter_users = root',
