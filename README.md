@@ -47,7 +47,7 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 | `sssd__service_nss_settings`           | Dict of string         | Specific settings that apply on nss service                                              |
 | `sssd__service_pam_settings`           | Dict of string         | Specific settings that apply on pam service                                              |
 | `sssd__service_sudo_settings`          | Dict of string         | Specific settings that apply on sudo service                                             |
-| `sssd__service_autofs_settings         | Dict of string         | Specific settings that apply on autofs service                                           |
+| `sssd__service_autofs_settings`        | Dict of string         | Specific settings that apply on autofs service                                           |
 | `sssd__service_ssh_settings`           | Dict of string         | Specific settings that apply on ssh service                                              |
 | `sssd__service_pac_settings`           | Dict of string         | Specific settings that apply on pac service                                              |
 | `sssd__service_ifp_settings`           | Dict of string         | Specific settings that apply on ifp service                                              |

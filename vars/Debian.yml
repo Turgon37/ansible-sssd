@@ -1,8 +1,8 @@
 ---
 
 sssd__packages_names:
-  - sssd
   - libnss-sss
   - libpam-sss
+  - sssd
 
 sssd__service_environment: /etc/default/sssd

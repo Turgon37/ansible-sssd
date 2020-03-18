@@ -13,7 +13,7 @@
   file:
     path: '{{ item }}'
     state: absent
-  with_items: "{{ _sssd__handler_restart_cache_find.files|map(attribute='path')|list}}"
+  with_items: "{{ _sssd__handler_restart_cache_find.files|map(attribute='path')|list }}"
   changed_when: true
   notify: ['restart-sssd-daemon']
 
